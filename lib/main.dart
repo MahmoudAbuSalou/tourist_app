@@ -7,7 +7,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:tourist_app/shared/network/local/cachehelper.dart';
 import 'package:tourist_app/shared/network/remote/dio_helper.dart';
+import 'package:tourist_app/shared/thems/them.dart';
 
+import 'Views/Journey/JourneyPage.dart';
 import 'shared/bloc_observer.dart';
 
 void main() async {
@@ -38,17 +40,19 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (_) {
-          return MultiBlocProvider(
-              providers: [
+          return
 
-              ],
-              child:MaterialApp(
+             MaterialApp(
+              debugShowCheckedModeBanner: false,
+              showSemanticsDebugger: false,
 
-                home: Container(),
+
+               theme: lightThem,
+                home: Journey(),
               )
 
 
-              );
+              ;
         });
   }
 }
