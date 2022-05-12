@@ -3,8 +3,10 @@ class Assets {
   Assets._();
 
   static const String imagesFlag = 'images/Flag.svg';
+  static const String imagesLogo = 'images/logo.png';
   static const String imagesSilder3 = 'images/silder3.png';
   static const String imagesSlider1 = 'images/slider1.png';
   static const String imagesSlider2 = 'images/slider2.png';
+  static const String imagesSlider3 = 'images/slider3.png';
 
 }

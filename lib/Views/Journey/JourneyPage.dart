@@ -222,14 +222,25 @@ class Journey extends StatelessWidget {
                   ],
                 ),
               ),
-              MaterialButton(onPressed: (){},
-                color: Colors.blue,
-                minWidth:500.w,
-                child: Text('بحث',
-                  style:_themeData.textTheme.headline1!.copyWith(
-                    fontSize: 75.sp,
-                    color: Colors.white
+              Container(
+                decoration: BoxDecoration(
 
+                  border: Border.all(color: Colors.white),
+                  borderRadius: BorderRadius.circular(40.r)
+                ),
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                child: MaterialButton(onPressed: (){},
+
+                  color: Colors.blue,
+                  height: 150.h,
+                  minWidth:500.w,
+
+                  child: Text('بحث',
+                    style:_themeData.textTheme.headline1!.copyWith(
+                      fontSize: 75.sp,
+                      color: Colors.white
+
+                    ),
                   ),
                 ),
               ),
