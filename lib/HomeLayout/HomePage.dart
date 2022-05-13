@@ -48,12 +48,16 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                  CircleAvatar(
-                  radius: 40.0.r,
+                  radius: 50.0.r,
+
                   backgroundImage: const NetworkImage(
-                      'https://www.iesabroad.org/files/blog/images/tug40860%40temple.edu/2019-07-14/hero_ultimaterome_hero_shutterstock789412159.jpg'),
+
+                      'https://t3.ftcdn.net/jpg/03/47/54/84/360_F_347548443_HYyk9dgqXtDPQKiefuA87kz8HvTfkxEr.jpg',
+
+                  ),
                   backgroundColor: Colors.transparent,
                 ),
-                Text('بريطانيا',
+                Text('الإمارات',
                     style: GoogleFonts.tajawal(
                         fontSize: 30.sp, color: Colors.black)),
               ],

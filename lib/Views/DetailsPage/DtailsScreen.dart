@@ -27,7 +27,7 @@ class DtailsScreen extends StatelessWidget {
             body: Directionality(
               textDirection: TextDirection.rtl,
               child: SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
+
                 child: Column(
                   children: [
                     Stack(
@@ -55,16 +55,25 @@ class DtailsScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text(
-                          'موسم الرياض',
-                          style: Theme
-                              .of(context)
-                              .textTheme
-                              .headline1!
-                              .copyWith(fontWeight: FontWeight.bold,fontSize: 80.sp),
+                        Expanded(
+
+                          child: Padding(
+                            padding:  EdgeInsets.symmetric(horizontal: 30.w),
+                            child: Text(
+                              'التعرف على دمشق ',
+                              maxLines: 3,
+                              style: Theme
+                                  .of(context)
+                                  .textTheme
+                                  .headline1!
+                                  .copyWith(fontWeight: FontWeight.bold,fontSize: 80.sp),
+                            ),
+                          ),
                         ),
-                        SizedBox(width: 40.w,),
-                        favoriteButton(onTap:cubit.loveButton ,isSelect:cubit.love ),
+                        Padding(
+                          padding:  EdgeInsets.only(left: 30.w),
+                          child: favoriteButton(onTap:cubit.loveButton ,isSelect:cubit.love ),
+                        ),
                       ],
                     ),
                     SizedBox(
@@ -102,9 +111,20 @@ class DtailsScreen extends StatelessWidget {
                           ),
                       itemCount: cubit.myList.length,
                     ),
+                    SizedBox(height: 200.h,)
                   ],
                 ),
               ),
+            ),
+            floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+            floatingActionButton: FloatingActionButton.extended(
+              onPressed: (){},
+              label: Text('    إشتراك     ',style: Theme.of(context).textTheme.headline1!.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.bold
+              ),),
+              icon: const Icon(Icons.thumb_up),
+
             ),
           ),
         );

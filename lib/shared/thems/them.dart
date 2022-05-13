@@ -54,7 +54,7 @@ ThemeData lightThem = ThemeData(
       elevation: 0,
     ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      backgroundColor: Colors.deepOrange,
+      backgroundColor: defaultColor,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
