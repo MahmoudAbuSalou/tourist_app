@@ -5,10 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tourist_app/HomeLayout/HomePage.dart';
+import 'package:tourist_app/Views/AppCubit/appCubit.dart';
+import 'package:tourist_app/Views/SplashPage/SplashScreen.dart';
+
 
 import 'package:tourist_app/shared/network/local/cachehelper.dart';
 import 'package:tourist_app/shared/network/remote/dio_helper.dart';
+import 'package:tourist_app/shared/thems/them.dart';
 
+import 'Views/Journey/JourneyPage.dart';
 import 'shared/bloc_observer.dart';
 
 void main() async {
@@ -39,11 +44,21 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (_) {
-          return const MaterialApp(
-            debugShowCheckedModeBanner: false,
+          return
 
-            home: HomePage(),
-          );
+            MultiBlocProvider(
+              providers: [
+                BlocProvider(create: (context) => AppCubit()),
+
+
+              ],
+               child: MaterialApp(
+                debugShowCheckedModeBanner: false,
+                showSemanticsDebugger: false,
+                 theme: lightThem,
+                  home: SplashScreen(),
+                ),
+             );
         });
   }
 }

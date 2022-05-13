@@ -1,14 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../style/colors.dart';
 
 
 ThemeData lightThem = ThemeData(
     primarySwatch: Colors.blue,
-    textTheme: const TextTheme(
-        bodyText1: TextStyle(
-            fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.black)),
+
+
+    textTheme:  TextTheme(
+
+
+        headline1:GoogleFonts.tajawal(
+          textStyle:  TextStyle(
+              fontSize: 60.sp,  color: defaultColor)
+        ),
+        headline3:GoogleFonts.tajawal(
+            textStyle:  TextStyle(
+                fontSize: 40.sp, color: Colors.black)
+        ),
+      headline2:GoogleFonts.tajawal(
+          textStyle:  TextStyle(
+              fontSize: 50.sp, color: Colors.white)
+      ),
+    ),
+
+
+
+
+
+
+
+
+
+
+
+
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: const AppBarTheme(
       titleSpacing: 20.0,

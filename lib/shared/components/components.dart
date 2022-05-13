@@ -1,6 +1,8 @@
 
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -150,4 +152,100 @@ void showToast({required String msg,required ToastState state})=> Fluttertoast.s
 
   );
 
+Widget shammerImage (String url){
+  return FancyShimmerImage(
+    imageUrl: url,
+    errorWidget: Image.network('https://i0.wp.com/www.dobitaobyte.com.br/wp-content/uploads/2016/02/no_image.png?ssl=1'),
+  );
+}
+Widget myListTile(context,String Title,String Image,String content){
+  return Column(
+    children: [
+      Row(children: [
+        Container(
 
+          height: 100.h,
+          width: 150.w,
+          child: SvgPicture.asset(
+            'images/'+Image,
+
+          ),
+        ),
+        Text(
+          Title,
+          style: Theme.of(context)
+              .textTheme
+              .headline2!.copyWith(
+              fontWeight: FontWeight.bold,
+              color: Colors.blueGrey
+          )
+          ,
+        ),
+
+      ],),
+      SizedBox(
+        height: 1.h,
+      ),
+      Container(
+        height: 200.h,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: 40.w,
+            ),
+            Text(
+              content,
+              maxLines: 3,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline3!.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blueGrey
+              )
+              ,
+            ),
+          ],
+        ),
+      )
+    ],
+  );
+}
+
+Widget favoriteButton({required bool isSelect,required Function onTap}){
+  return InkWell(
+    hoverColor: Colors.white,
+    highlightColor: Colors.white,
+    focusColor: Colors.white,
+    splashColor: Colors.white,
+
+    onTap: () {
+      onTap();
+    },
+    child: Padding(
+        padding: EdgeInsets.only(top: 25.h, right: 35.w),
+        child: Container(
+            width: 130.w,
+            height: 130.h,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: const [
+                BoxShadow(
+                    spreadRadius: 2,
+                    blurRadius: 3,
+                    offset: Offset(0, 6),
+                    color: Colors.black38)
+              ],
+              borderRadius: BorderRadius.circular(65.r),
+            ),
+            child: isSelect ? const Icon(
+              Icons.favorite,
+              color: Colors.red,
+              size: 25,
+            ):const Icon(
+              Icons.favorite_outline,
+              color: Colors.red,
+              size: 25,
+            ))),
+  );
+}
