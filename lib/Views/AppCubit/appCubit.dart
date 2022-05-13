@@ -20,7 +20,7 @@ class AppCubit extends Cubit<AppState> {
     myList.add(
         myListTile(context, 'كل الجماهير ، يسمح باصطحاب الأطفال', 'avatar.svg','يوجد العديد من العروض و المزايا '));
     myList.add(
-        myListTile(context, '11 نوفمبر 2022 إلى 11 مايو 2023', 'timer.svg','يوجد العديد من العروض و المزايا '));
+        myListTile(context, 'الرياض', 'location.svg','يوجد العديد من العروض و المزايا '));
   }
   void loveButton(){
     love=!love;

@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Future.delayed(const Duration(seconds: 2)).then(
           (value) =>
-              navigatorToNew(context, Journey()),
+          navigatAnimation(context,Journey())
 
     );
   }

@@ -7,6 +7,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
+import '../../Views/Journey/JourneyPage.dart';
 import '../network/end_point.dart';
 import 'constants.dart';
 
@@ -248,4 +249,15 @@ Widget favoriteButton({required bool isSelect,required Function onTap}){
               size: 25,
             ))),
   );
+}
+void navigatAnimation(context,page) {
+  Navigator.push(
+    context,
+    PageRouteBuilder(
+      pageBuilder: (c, a1, a2) => page,
+      transitionsBuilder: (c, anim, a2, child) => FadeTransition(opacity: anim, child: child),
+      transitionDuration: Duration(milliseconds: 2000),
+    ),
+  )
+  ;
 }
