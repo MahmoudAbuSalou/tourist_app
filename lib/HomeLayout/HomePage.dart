@@ -4,6 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../Views/DetailsPage/DtailsScreen.dart';
+import '../Views/Journey/JourneyPage.dart';
+import '../shared/components/components.dart';
+
 List<ItemCardData>item = [
   ItemCardData(title: 'تعلم اللغة الانجليزية في برايتون',isSelectef: false,image: 'https://www.iesabroad.org/files/blog/images/tug40860%40temple.edu/2019-07-14/hero_ultimaterome_hero_shutterstock789412159.jpg'),
   ItemCardData(title: 'تعلم اللغة الانجليزية في برايتون',isSelectef: true,image: 'https://www.iesabroad.org/files/blog/images/tug40860%40temple.edu/2019-07-14/hero_ultimaterome_hero_shutterstock789412159.jpg'),
@@ -126,85 +130,90 @@ class ItemCard extends StatefulWidget {
 class _ItemCardFunState extends State<ItemCard> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 15),
-      height: 1050.h,
-      clipBehavior: Clip.antiAliasWithSaveLayer,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(60.r),
-        boxShadow: const [
-          BoxShadow(
-              spreadRadius: 2,
-              blurRadius: 3,
-              offset: Offset(0, 6),
-              color: Colors.black38)
-        ],
-        color: Colors.white,
-      ),
-      child: Column(
-        children: [
-          Stack(
-            children: [
-              SizedBox(
-                height: 500.h,
+    return GestureDetector(
+      onTap: (){
+        navigatorTo(context, DtailsScreen());
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 15),
+        height: 1050.h,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(60.r),
+          boxShadow: const [
+            BoxShadow(
+                spreadRadius: 2,
+                blurRadius: 3,
+                offset: Offset(0, 6),
+                color: Colors.black38)
+          ],
+          color: Colors.white,
+        ),
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                SizedBox(
+                  height: 500.h,
+                  width: double.infinity,
+                  child: FancyShimmerImage(
+                    errorWidget: Image.network(
+                        'https://i0.wp.com/www.dobitaobyte.com.br/wp-content/uploads/2016/02/no_image.png?ssl=1'),
+                    imageUrl:
+                    'https://www.iesabroad.org/files/blog/images/tug40860%40temple.edu/2019-07-14/hero_ultimaterome_hero_shutterstock789412159.jpg',
+                  ),
+                ),
+                favoriteButton(isSelect:widget.isSelected,onTap: (){
+                  setState(() {
+                    widget.isSelected? widget.isSelected=false:widget.isSelected=true;
+                  });
+                }),
+
+              ],
+            ),
+            Expanded(
+              child: SizedBox(
                 width: double.infinity,
-                child: FancyShimmerImage(
-                  errorWidget: Image.network(
-                      'https://i0.wp.com/www.dobitaobyte.com.br/wp-content/uploads/2016/02/no_image.png?ssl=1'),
-                  imageUrl:
-                  'https://www.iesabroad.org/files/blog/images/tug40860%40temple.edu/2019-07-14/hero_ultimaterome_hero_shutterstock789412159.jpg',
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                        padding: EdgeInsets.only(top: 40.h, right: 20.h),
+                        width: double.infinity,
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          'ابدأ باكتشاف ما في محيطك...',
+                          style: GoogleFonts.tajawal(
+                            fontSize: 45.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFFF4b110),
+                          ),
+                        )),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    BuildRow(
+                        urlSvg: 'images/home.svg',
+                        title: ' سكن جماعي',
+                        height: 70),
+                    BuildRow(
+                        urlSvg: 'images/location.svg',
+                        title: 'دمشق',
+                        height: 70),
+                    BuildRow(
+                        urlSvg: 'images/time.svg',
+                        title:'11 مايو 2022 إلى 20 ايلول 2023 ' ,
+                        height: 60),
+                    BuildRow(
+                        urlSvg: 'images/distance.svg',
+                        title: '145 كم',
+                        height: 75),
+                  ],
                 ),
               ),
-              favoriteButton(isSelect:widget.isSelected,onTap: (){
-                setState(() {
-                  widget.isSelected? widget.isSelected=false:widget.isSelected=true;
-                });
-              }),
-
-            ],
-          ),
-          Expanded(
-            child: SizedBox(
-              width: double.infinity,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                      padding: EdgeInsets.only(top: 40.h, right: 20.h),
-                      width: double.infinity,
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        'تعلم اللغة الانجليزية في برايتون',
-                        style: GoogleFonts.tajawal(
-                          fontSize: 45.sp,
-                          fontWeight: FontWeight.bold,
-                          color: const Color(0xFFF4b110),
-                        ),
-                      )),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  BuildRow(
-                      urlSvg: 'images/home.svg',
-                      title: ' سكن عائلة',
-                      height: 70),
-                  BuildRow(
-                      urlSvg: 'images/location.svg',
-                      title: 'الرياض',
-                      height: 70),
-                  BuildRow(
-                      urlSvg: 'images/time.svg',
-                      title: 'نوفمبر الى يونيو حسب توقيت المملكة',
-                      height: 60),
-                  BuildRow(
-                      urlSvg: 'images/distance.svg',
-                      title: '751 كم',
-                      height: 75),
-                ],
-              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

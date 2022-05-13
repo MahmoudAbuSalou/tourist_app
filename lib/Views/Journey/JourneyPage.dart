@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tourist_app/HomeLayout/HomePage.dart';
 
 import '../../shared/components/components.dart';
 import '../DetailsPage/DtailsScreen.dart';
@@ -234,7 +235,7 @@ class Journey extends StatelessWidget {
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 child: MaterialButton(onPressed: (){
 
-                  navigatorTo(context,DtailsScreen());
+                  navigatorTo(context, const HomePage());
                 },
 
                   color: Colors.blue,
