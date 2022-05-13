@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tourist_app/HomeLayout/HomePage.dart';
 
 import 'package:tourist_app/shared/network/local/cachehelper.dart';
 import 'package:tourist_app/shared/network/remote/dio_helper.dart';
@@ -38,17 +39,11 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (_) {
-          return MultiBlocProvider(
-              providers: [
+          return const MaterialApp(
+            debugShowCheckedModeBanner: false,
 
-              ],
-              child:MaterialApp(
-
-                home: Container(),
-              )
-
-
-              );
+            home: HomePage(),
+          );
         });
   }
 }
