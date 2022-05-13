@@ -7,6 +7,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../shared/components/components.dart';
+import '../DetailsPage/DtailsScreen.dart';
+
 class Journey extends StatelessWidget {
    Journey({Key? key}) : super(key: key);
   List <Widget>list=[
@@ -229,7 +232,10 @@ class Journey extends StatelessWidget {
                   borderRadius: BorderRadius.circular(40.r)
                 ),
                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                child: MaterialButton(onPressed: (){},
+                child: MaterialButton(onPressed: (){
+
+                  navigatorTo(context,DtailsScreen());
+                },
 
                   color: Colors.blue,
                   height: 150.h,

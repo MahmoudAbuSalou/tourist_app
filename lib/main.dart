@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tourist_app/Views/AppCubit/appCubit.dart';
 import 'package:tourist_app/Views/SplashPage/SplashScreen.dart';
 
 import 'package:tourist_app/shared/network/local/cachehelper.dart';
@@ -43,14 +44,21 @@ class MyApp extends StatelessWidget {
         builder: (_) {
           return
 
-             MaterialApp(
-              debugShowCheckedModeBanner: false,
-              showSemanticsDebugger: false,
+            MultiBlocProvider(
+              providers: [
+                BlocProvider(create: (context) => AppCubit()),
 
 
-               theme: lightThem,
-                home: SplashScreen(),
-              )
+              ],
+               child: MaterialApp(
+                debugShowCheckedModeBanner: false,
+                showSemanticsDebugger: false,
+
+
+                 theme: lightThem,
+                  home: SplashScreen(),
+                ),
+             )
 
 
               ;
