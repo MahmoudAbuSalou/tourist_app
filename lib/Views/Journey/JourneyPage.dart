@@ -16,7 +16,11 @@ class Journey extends StatelessWidget {
   List <Widget>list=[
    Image.asset('images/slider3.png',fit: BoxFit.fitHeight,),
    Image.asset('images/slider2.png',fit: BoxFit.fitHeight,),
-   Image.asset('images/slider1.png',fit: BoxFit.fitHeight,)
+   Image.asset('images/slider1.png',fit: BoxFit.fitHeight,),
+   Image.asset('images/slider4.jpg',fit: BoxFit.fitHeight,),
+   Image.asset('images/slider5.png',fit: BoxFit.fitHeight,),
+   Image.asset('images/slider6.png',fit: BoxFit.fitHeight,),
+   Image.asset('images/slider7.jpg',fit: BoxFit.fitHeight,),
 
 
   ];
@@ -49,7 +53,7 @@ class Journey extends StatelessWidget {
                               enableInfiniteScroll: true,
                               reverse: false,
                               autoPlay: true,
-                              autoPlayInterval: Duration(seconds: 3),
+                              autoPlayInterval: Duration(seconds: 2),
                               autoPlayAnimationDuration: Duration(milliseconds: 1600),
                               autoPlayCurve: Curves.fastOutSlowIn,
                               enlargeCenterPage: true,
