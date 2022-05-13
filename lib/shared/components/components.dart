@@ -251,7 +251,7 @@ Widget favoriteButton({required bool isSelect,required Function onTap}){
   );
 }
 void navigatAnimation(context,page) {
-  Navigator.push(
+  Navigator.pushReplacement(
     context,
     PageRouteBuilder(
       pageBuilder: (c, a1, a2) => page,

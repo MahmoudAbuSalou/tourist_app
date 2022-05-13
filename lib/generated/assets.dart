@@ -2,11 +2,21 @@
 class Assets {
   Assets._();
 
+  static const String imagesDistance = 'images/distance.svg';
   static const String imagesFlag = 'images/Flag.svg';
+  static const String imagesHome = 'images/home.svg';
+  static const String imagesLocation = 'images/location.svg';
   static const String imagesLogo = 'images/logo.png';
   static const String imagesSilder3 = 'images/silder3.png';
   static const String imagesSlider1 = 'images/slider1.png';
   static const String imagesSlider2 = 'images/slider2.png';
   static const String imagesSlider3 = 'images/slider3.png';
+  static const String imagesSlider4 = 'images/slider4.jpg';
+  static const String imagesSlider5 = 'images/slider5.png';
+  static const String imagesSlider6 = 'images/slider6.png';
+  static const String imagesSlider7 = 'images/slider7.jpg';
+  static const String imagesTime = 'images/time.svg';
+  static const String imagesTimer = 'images/timer.svg';
+  static const String imagesUser = 'images/user.svg';
 
 }
